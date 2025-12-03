@@ -12,7 +12,7 @@ on:
 
 jobs:
 
-    setup_jobs:
+    setup_job:
         runs-on: ubuntu-latest 
         steps:
             - name: checkout repo
@@ -24,6 +24,7 @@ jobs:
             - name: display readme file
               run: cat README.md
     build_job:
+        needs: setup_job
         runs-on: windows-latest
         steps:
             - name: display hello
